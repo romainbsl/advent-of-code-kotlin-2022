@@ -8,7 +8,7 @@ fun main() {
     println(part2(input))
 }
 
-fun part1(input: List<String>): String {
+private fun part1(input: List<String>): String {
     val (stacks, moves) = parse(input)
 
     moves.forEach { move ->
@@ -22,7 +22,7 @@ fun part1(input: List<String>): String {
     return stacks.values.map { it.last() }.joinToString("") { it.mark }
 }
 
-fun part2(input: List<String>): String {
+private fun part2(input: List<String>): String {
     val (stacks, moves) = parse(input)
 
     moves.forEach { move ->
