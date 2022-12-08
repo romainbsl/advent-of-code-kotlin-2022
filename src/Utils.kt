@@ -24,3 +24,13 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 fun String.remove(vararg strings: String) = strings.fold(this) { acc: String, s: String ->
     acc.replace(s, "")
 }
+
+public inline fun <T> Iterable<T>.takeUntil(predicate: (T) -> Boolean): List<T> {
+    val list = ArrayList<T>()
+    for (item in this) {
+        list.add(item)
+        if (predicate(item))
+            break
+    }
+    return list
+}
